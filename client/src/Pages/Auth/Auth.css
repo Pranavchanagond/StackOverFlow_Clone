@@ -4,4 +4,54 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f1f2f3;
+}
+
+.login-logo{
+    padding: 20px 30px;
+}
+
+.auth-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+
+
+.auth-container form{
+    min-width: 20%;
+    background-color: 
+    #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+   
+    display: flex;
+
+    flex-direction: column;    
+    box-shadow: 0 10px 25px rgb(0 0 0 / 5%);
+}
+
+h4{
+    margin: 5px;
+}
+
+input{
+  border-radius: 10px;
+  border: 1px solid  #cacdd2;
+  padding: 10px;
+  margin-bottom: 20px;
+  
+}
+
+.auth-btn{
+    background-color: 
+    #1b75d0;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import icon from "../../assets/stack-overflow-logo.svg";
 import "./Auth.css";
+import SignupIntro from "./SignupIntro";
 
 const Auth = () => {
   const [isSignup, setIsSignup] = useState(false);
@@ -13,29 +14,16 @@ const Auth = () => {
 
   return (
     <section className="auth-section">
+      {isSignup && <SignupIntro />}
       <div className="auth-container">
-        {!isSignup ? (
+        {!isSignup && (
           <img src={icon} alt="stack overflow" className="login-logo" />
-        ) : (
-          <p>
-            Create your Stack Overflow account. It’s free and only takes a
-            minute.
-          </p>
         )}
         <form>
           {isSignup && (
-            <label
-              htmlFor="Display name
-            "
-            >
+            <label htmlFor="Displayname">
               <h4>Display name</h4>
-              <input
-                type="text"
-                name="Display name
-"
-                id="Display name
-"
-              />
+              <input type="text" name="Display name" id="Displayname" />
             </label>
           )}
 
@@ -47,8 +35,8 @@ const Auth = () => {
             <div
               style={{
                 display: "flex",
-                justifyContent: "space-between",
                 alignItems: "center",
+                justifyContent: "space-between",
               }}
             >
               <h4>Password</h4>
@@ -58,10 +46,18 @@ const Auth = () => {
                 </p>
               )}
             </div>
+
             <input type="password" name="password" id="password" />
 
             {isSignup && (
-              <p>
+              <p
+                style={{
+                  fontSize: "13px",
+                  marginTop: "5px",
+                  marginBottom: 0,
+                  color: "#666767",
+                }}
+              >
                 Passwords must contain at least eight characters,
                 <br /> including at least 1 letter and 1 number.
               </p>
@@ -69,13 +65,19 @@ const Auth = () => {
           </label>
 
           {isSignup && (
-            <label htmlFor="check">
+            <div htmlFor="check" className="check">
               <input type="checkbox" name="check" id="check" />
-              <p style={{ fontSize: "13px" }}>
+              <p
+                style={{
+                  fontSize: "13px",
+                  margin: 0,
+                  color: "#666767",
+                }}
+              >
                 Opt-in to receive occasional product <br /> updates, user
                 research invitations, company <br /> announcements, and digests.
               </p>
-            </label>
+            </div>
           )}
 
           <button type="submit" className="auth-btn">
@@ -97,7 +99,12 @@ const Auth = () => {
             </p>
           )}
         </form>
-        <p>
+        <p
+          style={{
+            color: "#666775",
+            marginTop: "40px",
+          }}
+        >
           {!isSignup ? "Don’t have an account?" : "Already have an account?"}
           <button
             type="button"

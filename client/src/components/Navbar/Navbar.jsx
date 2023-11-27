@@ -29,7 +29,7 @@ const Navbar = () => {
         </Link>
         <form>
           <input type="text" placeholder="Search..." />
-          <img src={search} alt="search" width="18" className="search-icon" />
+          <img src={search} alt="search" width="15" className="search-icon" />
         </form>
 
         {user === null ? (
